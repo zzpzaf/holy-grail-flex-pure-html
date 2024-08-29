@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html>
+<html>   
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            header, nav, footer {
+                width: 100%;
+                flex-shrink: 0;
+            }
+
+            header {
+                order: 1;
+                background-color: dodgerblue;
+                height: 80px;
+            }
+
+            nav {
+                order: 2;
+                background-color: lightskyblue;
+                height: 50px;   
+            }
+
+            .middle-row {
+                display: flex;
+                flex-direction: column;
+                order: 3;
+                flex-grow: 1;
+                overflow: auto;
+            }
+
+            aside.left {
+                background-color: lightpink;
+                width: 100%;
+            }
+
+            main {
+                background-color: lightgray;
+                width: 100%;
+            }
+
+            aside.right {
+                background-color: lightgoldenrodyellow;
+                width: 100%;
+            }
+
+            footer {
+                order: 4;
+                background-color: lightseagreen;
+                height: 60px;
+            }
+
+            /* Media query for min-width: 320px */
+            @media (min-width: 320px) {
+                .middle-row {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+
+                header {
+                    height: 60px;
+                }
+
+                nav {
+                    height: 40px;
+                }
+
+                aside.left {
+                    width: 100%;
+                    order: 1;
+                }
+
+                main {
+                    width: 100%;
+                    order: 2;
+                    min-height:fit-content ;
+                }
+
+                aside.right {
+                    width: 100%;
+                    order: 3;
+                }
+
+                footer {
+                    height: 40px;
+                }
+
+            }
+
+            /* Media query for min-width: 768px */
+            @media (min-width: 768px) {
+                .middle-row {
+                    /* flex-wrap: nowrap; */
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    
+                }
+
+                aside.left, main {
+                    min-height: 76%;
+                }
+
+                header {
+                    height: 80px;
+                }
+
+                nav {
+                    height: 50px;
+                }
+
+                aside.left {
+                    width: 22%;
+                    order: 1;
+                    min-height: 60%;
+                }
+
+                main {
+                    width: 78%;
+                    order: 2;
+                    /* height: 300px; */
+                    /* min-height: 60%; */
+                }
+
+                aside.right {
+                    width: 100%;
+                    order: 3;
+                    /* min-height: 100px; */
+                    /* max-height: 5%; */
+                }
+
+                footer {
+                    height: 60px;
+                }
+            }
+
+            /* Media query for min-width: 1024px */
+            @media (min-width: 1024px) {
+                aside.left {
+                    width: 25%;
+                }
+
+                main {
+                    width: 72%;
+                }
+
+                aside.right {
+                    width: 3%;
+                }
+            }
+        </style>
+    </head>
+ 
+    <body>
+        <header>
+            Header
+        </header>
+
+        <nav>
+            Navigation Row
+        </nav>
+
+        <div class="middle-row">
+            <aside class="left">
+                Left Pane (NavBar)
+            </aside>
+
+            <main>
+                Main Content area
+            </main>
+
+            <aside class="right">
+                Right pane
+            </aside>
+        </div>
+
+        <footer>
+            Footer
+        </footer>
+    </body>
+</html>
+
